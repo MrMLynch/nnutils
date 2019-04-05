@@ -45,5 +45,6 @@ if [[ $utxocount -eq 0 ]]; then
 	done
 	if [[ $utxocount -ge 1 ]]; then
 		./utxosplitter.sh $coin &
+		echo "[$coin] -- Finished --"
 	fi
 fi

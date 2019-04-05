@@ -11,6 +11,9 @@ sleepytime=false
 #How many transactions back to scan for notarizations
 txscanamount=77777
 
+#Full path to komodo-cli
+#komodoexec=/usr/local/bin/komodo-cli
+
 #==End Options==
 
 # Just to be sure printf doesn't reject with "invalid number" error because of decimal separator
@@ -49,7 +52,7 @@ timeSince () {
 #The BTC and KMD address here must remain the same. Do not need to enter yours!
 utxoamt=0.00010000
 ntrzdamt=-0.00083600
-kmdntrzaddr=RU2Wi8FGdheQXSfHzgtMANB6JJTLchfHhE
+kmdntrzaddr=RXL3YXG2ceaB6C5hfJcN4fvmLH2C34knhA
 timefilter2=1525513998
 
 format="%-13s %12.4f %7s %7s %7s %7s %7s %7s %7s"
@@ -61,7 +64,7 @@ outputstats ()
     now=$(date +"%H:%M")
 
     printf "\n\n"
-    printf "%-13s %12s %7s %7s %7s %7s %7s %7s %7s\n" "-ASSET-" "-BALANCE-" "-UTXO-" "-NOTR-" "-BLOX-" "-PCT-" "-LAST-" "-CNCT-" "-SIZE-";
+    printf "%-13s %12s %7s %7s %7s %7s %9s %7s %7s %7s\n" "-ASSET-" "-BAL-" "-UTXO-" "-NOTR-" "-BLOX-" "-PCT-" "-LASTN-" "-CON-" "-SIZE-";
 
     kmdinfo=$(komodo-cli getinfo)
     kmdtxinfo=$(komodo-cli listtransactions "" $txscanamount)
@@ -69,16 +72,15 @@ outputstats ()
     printf "$format\n" "KMD" \
             "$(printf "%12.4f" $(echo $kmdinfo | jq .balance))" \
             "$(komodo-cli listunspent | jq --arg amt "$utxoamt" '[.[] | select(.amount==($amt|tonumber))] | length')" \
-            " " \
+	    " " \
             "$(echo $kmdinfo | jq .blocks)" \
-	    " "\
+	    " " \
             "$(timeSince $kmdlastntrztime)" \
             "$(echo $kmdinfo | jq .connections)" \
 	    "$(./checkwalletsize.sh | awk '{print $5}' | head -1)"
 
     ./listassetchains.py | while read coins; do    
-        coin=($coins)
-
+         coin=($coins)
             info=$(komodo-cli -ac_name=${coin} getinfo)
             blocks=$(echo $info | jq .blocks)
             txinfo=$(komodo-cli -ac_name=${coin} listtransactions "" $txscanamount)

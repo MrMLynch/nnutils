@@ -9,9 +9,11 @@ if [[ -z "${coin}" ]]; then
   exit
 fi
 
-cli=$(./listclis.sh ${coin})
+clif=$(./listclis.sh ${coin})
+cli=/usr/local/bin/${clif}
 
 result=$($cli cleanwallettransactions)
 result_formatted=$(echo $result | jq -r '"Total Transactions: \(.total_transactons) | Remaining Transactions: \(.remaining_transactons) | Removed Transactions: \(.removed_transactions)"')
 
 echo "[$coin] $(date) | $result_formatted"
+echo "[$coin] -- Finished --
