@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TELEGRAMDIR=/home/$USER/bin/telegram
+TELEGRAMDIR=/home/$USER/nnutils/telegram
 source ${TELEGRAMDIR}/telegram_info.txt
 
 # JUST ECHO
