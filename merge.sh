@@ -8,7 +8,7 @@ coin=$1
 # change node address here
 nAddress="RU2Wi8FGdheQXSfHzgtMANB6JJTLchfHhE"
 
-date=$(date +%Y-%m-%d:%H:%M:%S)
+date=$(date +%Y-%m-%d %H:%M:%S)
 
 if [[ -z "${coin}" ]]; then
 	echo "----------------------------------------"
