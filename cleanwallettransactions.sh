@@ -13,7 +13,7 @@ clif=$(./listclis.sh ${coin})
 cli=/usr/local/bin/${clif}
 
 result=$($cli cleanwallettransactions)
-result_formatted=$(echo $result | jq -r '"Total Transactions: \(.total_transactons) | Remaining Transactions: \(.remaining_transactons) | Removed Transactions: \(.removed_transactions)"')
+result_formatted=$(echo $result | jq -r '"Total Tx: \(.total_transactons) | Remaining Tx: \(.remaining_transactons) | Removed Tx: \(.removed_transactions)"')
 
 echo "[$coin] $(date) | $result_formatted"
-echo "[$coin] -- Finished --
+echo "[$coin] -- Finished --"
