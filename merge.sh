@@ -8,7 +8,7 @@ coin=$1
 # change node address here
 nAddress="RU2Wi8FGdheQXSfHzgtMANB6JJTLchfHhE"
 
-date=$(date +%Y-%m-%d %H:%M:%S)
+date=$(date +'%Y-%m-%d %H:%M:%S')
 
 if [[ -z "${coin}" ]]; then
 	echo "----------------------------------------"
@@ -25,9 +25,9 @@ clif=$(./listclis.sh ${coin})
 
 cli=/usr/local/bin/${clif}
 
-balance=$(${clif} getbalance)
-echo "[${coin}] Current balance: ${balance} - consolidating..."
-txid=$(${cli} sendtoaddress ${nAddress} ${balance} \"\" \"\" true)
+#balance=$(${clif} getbalance)
+echo "[${coin}] Current balance: $(${cli} getbalance) - consolidating..."
+txid=$(${cli} sendtoaddress ${nAddress} $(${cli} getbalance) \"\" \"\" true)
 
 if [[ ${txid} != "null" ]]; then
 	echo "[${coin}] Merge TXID: ${txid}"

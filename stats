@@ -63,7 +63,7 @@ outputstats ()
     totalntrzd=0
     now=$(date +"%H:%M")
 
-    printf "\n\n"
+    printf "\n"
     printf "%-13s %12s %7s %7s %7s %7s %9s %7s %7s %7s\n" "-ASSET-" "-BAL-" "-UTXO-" "-NOTR-" "-BLOX-" "-PCT-" "-LASTN-" "-CON-" "-SIZE-";
 
     kmdinfo=$(komodo-cli getinfo)
