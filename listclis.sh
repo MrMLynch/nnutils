@@ -12,7 +12,7 @@ hush_cli="hush-cli"
 einsteinium_cli="einsteinium-cli"
 gincoin_cli="gincoin-cli"
 komodo_cli="komodo-cli"
-verus_cli="${komodo_cli} -ac_name=VRSC"
+verus_cli="vrsc-cli"
 
 if [[ -z "${specific_coin}" ]] || [[ "${specific_coin}" = "BTC" ]]; then
   echo ${bitcoin_cli}
