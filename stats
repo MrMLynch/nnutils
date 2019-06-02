@@ -123,7 +123,7 @@ checkRepo () {
 
 #Do not change below for any reason!
 #The BTC and KMD address here must remain the same. Do not need to enter yours!
-source coinlist
+source ~/nnutils/coinlist
 utxoamt=0.00010000
 ntrzdamt=-0.00083600
 btcntrzaddr=1P3rU1Nk1pmc2BiWC8dEy9bZa1ZbMp5jfg
