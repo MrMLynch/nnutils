@@ -5,11 +5,11 @@ cd "${BASH_SOURCE%/*}" || exit
 # e.g "KMD"
 coin=$1
 
-kmd_target_utxo_count=12
-kmd_split_threshold=6
+kmd_target_utxo_count=77
+kmd_split_threshold=35
 
-other_target_utxo_count=6
-other_split_threshold=3
+other_target_utxo_count=42
+other_split_threshold=21
 
 date=$(date +%Y-%m-%d:%H:%M:%S)
 
