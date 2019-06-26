@@ -12,4 +12,4 @@ if [[ ${coin} = "EMC2" ]]; then
   utxo_size=100000
 fi
 
-curl http://127.0.0.1:7776 --silent --data "{\"coin\":\"${coin}\",\"agent\":\"iguana\",\"method\":\"splitfunds\",\"satoshis\":${utxo_size},\"sendflag\":1,\"duplicates\":${duplicates}}"
+curl http://127.0.0.1:7779 --silent --data "{\"coin\":\"${coin}\",\"agent\":\"iguana\",\"method\":\"splitfunds\",\"satoshis\":${utxo_size},\"sendflag\":1,\"duplicates\":${duplicates}}"
