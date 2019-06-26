@@ -27,23 +27,15 @@ komodoexec=/usr/local/bin/komodo-cli
 declare -A repos=(
 [KMD]='$HOME/komodo origin/beta'
 [SUPERNET]='$HOME/SuperNET origin/dev'
-[CHIPS]='$HOME/chips3 origin/dev'
-[GAME]='<game_home>/GameCredits origin/master'
-[EMC2]='<einsteinium_home>/einsteinium origin/master'
-[GIN]='<gincoin_home>/gincoin-core origin/master'
 [VRSC]='<veruscoin_home>/VerusCoin origin/master'
-[HUSH]='<hush3_home>/hush3 origin/master'
+[HUSH]='<hush3_home>/hush3 origin/dev'
 )
 
 #declare non komodo clis - symlink them to /usr/local/bin or set the full path accessible as the second part of each string, the 3rd entry is the name of the data dir for the coin and assumes they are in $HOME
 othercoins=(
 'BTC bitcoin-cli <main_user_home>/.bitcoin'
-'CHIPS chips-cli <main_user_home>/.chips'
-'GAME gamecredits-cli <game_home>/.gamecredits'
-'EMC2 einsteinium-cli <einsteinium_home>/.einsteinium'
-'GIN gincoin-cli <gincoin_home>/.gincoincore'
 'HUSH hush-cli <hush3_home>/.komodo/HUSH3'
-'VRSC vrsc-cli <veruscoin_home>/.komodo/VRSC'
+'VRSC verus <veruscoin_home>/.komodo/VRSC'
 )
 
 #==End Options==
