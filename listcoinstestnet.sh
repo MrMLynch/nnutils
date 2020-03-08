@@ -2,6 +2,6 @@
 cd "${BASH_SOURCE%/*}" || exit
 
 echo "KMD"
-echo "BEER"
-echo "PIZZA"
-echo "TXSCLCC"
+echo "RICK"
+echo "MORTY"
+
